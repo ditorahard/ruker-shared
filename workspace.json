@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "ruker-mobile": "apps/ruker-mobile",
+    "ruker-mobile-e2e": "apps/ruker-mobile-e2e"
+  }
+}
