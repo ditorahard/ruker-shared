@@ -1,0 +1,20 @@
+{
+  "presets": [
+    [
+      "@nrwl/react/babel",
+      {
+        "runtime": "automatic",
+        "useBuiltIns": "usage"
+      }
+    ],
+    ["@nrwl/next/babel"],
+    ["@babel/preset-flow"],
+    ["@babel/preset-react"]
+  ],
+  "plugins": [["react-native-web", { "commonjs": true }]],
+  "env": {
+    "test": {
+      "presets": ["module:metro-react-native-babel-preset"]
+    }
+  }
+}

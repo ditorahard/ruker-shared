@@ -1,0 +1,83 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ruker-uiweb/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/ruker-uiweb",
+        "index": "apps/ruker-uiweb/src/index.html",
+        "baseHref": "/",
+        "main": "apps/ruker-uiweb/src/main.tsx",
+        "polyfills": "apps/ruker-uiweb/src/polyfills.ts",
+        "tsConfig": "apps/ruker-uiweb/tsconfig.app.json",
+        "assets": [
+          "apps/ruker-uiweb/src/favicon.ico",
+          "apps/ruker-uiweb/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/ruker-uiweb/src/environments/environment.ts",
+              "with": "apps/ruker-uiweb/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ruker-uiweb:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ruker-uiweb:build:development"
+        },
+        "production": {
+          "buildTarget": "ruker-uiweb:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ruker-uiweb/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ruker-uiweb"],
+      "options": {
+        "jestConfig": "apps/ruker-uiweb/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

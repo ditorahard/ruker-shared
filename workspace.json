@@ -3,6 +3,13 @@
   "version": 2,
   "projects": {
     "ruker-mobile": "apps/ruker-mobile",
-    "ruker-mobile-e2e": "apps/ruker-mobile-e2e"
+    "ruker-mobile-e2e": "apps/ruker-mobile-e2e",
+    "ruker-uiweb": "apps/ruker-uiweb",
+    "ruker-uiweb-e2e": "apps/ruker-uiweb-e2e",
+    "ruker-webapp": "apps/ruker-webapp",
+    "ruker-website": "apps/ruker-website",
+    "ruker-website-e2e": "apps/ruker-website-e2e",
+    "shared-ui-layout": "libs/shared-ui-layout",
+    "ui-heading": "libs/ui-heading"
   }
 }
